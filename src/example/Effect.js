@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import axios from "axios";
-// import {useQuery} from 'react-query'
 
 const  Effect =()=> {
   const [loading, setLoading] = useState(false);
@@ -9,16 +8,13 @@ const  Effect =()=> {
   const [type, setType] = useState("users");
 
 
-
-  // const { isLoading, error, data } = useQuery('repoData', () => axios(`https://jsonplaceholder.typicode.com/${type}/?_limit=10`));
-
   useEffect(() => {
    async function res(){
 
       try {
         setLoading(true);
         await axios(`https://jsonplaceholder.typicode.com/${type}/?_limit=10`)
-        .then((json) => (setData(json.data )))
+        .then((all) => (setData(all.data )))
         setLoading(false);
       } 
       catch(error) {

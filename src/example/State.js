@@ -1,11 +1,8 @@
-import { useState } from "react";
-import { QueryClientProvider, QueryClient } from "react-query";
-import Effect from "./Effect";
+import React,{ useState } from "react";
 
 function getRandomInt() {
   return Math.floor(Math.random() * 100);
 }
-
 
 const State = () => {
   const [Counter, setCounter] = useState(() => getRandomInt());
